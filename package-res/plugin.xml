@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin title="gChartsPlugin" loader="DEFAULT">
+<overlays>
+	</overlays>
+	<lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
+	<static-paths>
+		<static-path url="/gChartsPlugin/static" localFolder="static"/>
+		<static-path url="/gChartsPlugin/resources" localFolder="resources"/>
+	</static-paths>
+	<content-types>
+		<content-type>
+			<title>GChartsPlugin</title>
+			<description></description>
+			<company name="" url="" logo="@PLUGIN_COMPANY_LOGO@"></company>
+		</content-type>
+	</content-types>
+	<content-generator
+		id="gChartsPlugin"
+		title="GChartsPlugin"
+		type="gChartsPlugin"
+		class="pt.webdetails.cpk.CpkContentGenerator"/>
+	<!-- Menu entry -->
+	<menu-items>
+		<!--<menu-item id="gChartsPlugin_main" anchor="tools-submenu" label="GChartsPlugin" command="content/gChartsPlugin/" type="MENU_ITEM" how="LAST_CHILD"/>-->
+	</menu-items>
+</plugin>

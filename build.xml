@@ -1,0 +1,30 @@
+<project name="gChartsPlugin" basedir="." default="default">
+<!-- Import the subfloor-pkg.xml file which contains all the default ant targets -->
+  <import file="build-res/subfloor-pkg.xml" />
+  <property name="dir.system" value="${dir.solutions}/system"/>
+
+  <target name="assemble.copy-libs">
+    <copy todir="${approot.stage.dir}/lib">
+      <!-- Add jar files from dev lib -->
+      <fileset file="${devlib.dir}/*.jar" />
+      <fileset file="${dist.dir}/${ivy.artifact.id}-${project.revision}.jar" />
+    </copy>
+  </target>
+
+
+  <target name="install-plugin" depends="dist,assemble.copy-libs"> 	
+    <copy todir="${dir.system}/${package.root.dir}" >
+      <fileset dir="${approot.stage.dir}" />
+    </copy>
+    <echo message="${approot.stage.dir}"></echo>
+    <echo message="${dir.system}/${package.root.dir}"></echo>
+  </target>
+
+  <target name="reinstall-plugin">
+    <echo message="Cleaning plugin folder..."></echo>
+    <delete dir="${dir.system}/${package.root.dir}"/>
+    <antcall target="install-plugin"/>
+  </target>
+
+  
+</project>

@@ -1,0 +1,17 @@
+<ivy-module version='2.0'>
+	<info organisation='com.pentaho' module='gChartsPlugin' revision='${project.revision}' />
+	<configurations>
+		<conf name='runtime' />
+		<conf name='master' />
+		<conf name='default' />
+		<conf name='codegen' />
+		<conf name='test' visibility='private' />
+	</configurations>
+	<publications>
+		<artifact name='${ivy.artifact.id}' type='jar' conf='default' />
+	</publications>
+
+	<dependencies>
+
+	</dependencies>
+</ivy-module>
